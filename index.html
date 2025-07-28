@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>samplewebsite</title>
+    <title>Innevotek Solutions - Urban Organic Farming</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>My Website</h1>
+                <img src="images/innevotekagrisolutions_logo2.jpg" alt="Innevotek Solutions Logo" style="height: 50px; width: auto;">
+                <h1 style="display: inline-block; margin-left: 15px; color: #2d5016; font-size: 1.8rem; vertical-align: middle;">Innevotek Solutions</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -25,46 +24,79 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Welcome to Our Amazing Website</h1>
-                <p>Discover incredible experiences and services that will transform your journey</p>
-                <div class="hero-buttons">
-                    <a href="about.html" class="btn primary">Learn More</a>
-                    <a href="contact.html" class="btn secondary">Get Started</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/hero-image.jpg" alt="Hero Image">
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <h2>Why Choose Us?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <img src="images/feature1.jpg" alt="Quality Service">
-                        <h3>Quality Service</h3>
-                        <p>We provide top-notch services that exceed your expectations every time.</p>
-                    </div>
-                    <div class="feature-card">
-                        <img src="images/feature2.jpg" alt="Expert Team">
-                        <h3>Expert Team</h3>
-                        <p>Our team consists of highly skilled professionals with years of experience.</p>
-                    </div>
-                    <div class="feature-card">
-                        <img src="images/feature3.jpg" alt="24/7 Support">
-                        <h3>24/7 Support</h3>
-                        <p>We're here for you around the clock to ensure your success.</p>
-                    </div>
-                </div>
+                <h1>Transform Your Space with Urban Organic Farming</h1>
+                <p>Innevotek Solutions creates greener and more sustainable urban spaces by transforming rooftops, walls, and open areas into productive organic farms and vertical gardens.</p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 My Website. All rights reserved.</p>
+            <p>&copy; 2025 Innevotek Solutions. Creating sustainable urban farming solutions.</p>
         </div>
     </footer>
+
+    <script>
+        // Page transition effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth page transitions when clicking navigation links
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Don't interfere with current page or external links
+                    if (href === 'index.html' || href.includes('#') || href.startsWith('http')) {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    
+                    // Add fade out effect
+                    document.body.style.transition = 'opacity 0.3s ease-out';
+                    document.body.style.opacity = '0';
+                    
+                    // Navigate after fade out
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 300);
+                });
+            });
+        });
+
+        // Flowing navigation highlighter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const activeLink = document.querySelector('.nav-links a.active');
+            
+            // Function to move highlighter to active link
+            function moveHighlighter(target) {
+                if (!target) return;
+                
+                const navRect = navLinks.getBoundingClientRect();
+                const targetRect = target.getBoundingClientRect();
+                
+                const offsetLeft = targetRect.left - navRect.left - 4; // Account for padding
+                const width = targetRect.width;
+                
+                navLinks.style.setProperty('--highlighter-left', `${offsetLeft}px`);
+                navLinks.style.setProperty('--highlighter-width', `${width}px`);
+            }
+            
+            // Set initial position
+            if (activeLink) {
+                setTimeout(() => moveHighlighter(activeLink), 100);
+            }
+            
+            // Add hover effects
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => moveHighlighter(link));
+                link.addEventListener('mouseleave', () => {
+                    if (activeLink) moveHighlighter(activeLink);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
