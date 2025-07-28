@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>My Website</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch and let's start your next project</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <h2>Let's Work Together</h2>
+                <p>
+                    Ready to get started? We'd love to hear about your project and discuss how we can help 
+                    bring your vision to life. Fill out the form below or use our contact information to reach us directly.
+                </p>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your project or how we can help..." required></textarea>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <button type="submit" class="btn primary">Send Message</button>
+                        <button type="reset" class="btn secondary">Clear Form</button>
+                    </div>
+                </form>
+
+                <div class="features-grid" style="margin-top: 4rem;">
+                    <div class="feature-card">
+                        <h3>📧 Email</h3>
+                        <p>hello@mywebsite.com</p>
+                        <p>We'll respond within 24 hours</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📞 Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                        <p>Monday - Friday, 9 AM - 6 PM</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📍 Office</h3>
+                        <p>123 Business Street<br>Suite 100<br>Your City, State 12345</p>
+                    </div>
+                </div>
+
+                <h2>Frequently Asked Questions</h2>
+                <div style="margin-top: 2rem;">
+                    <h3>How long does a typical project take?</h3>
+                    <p>Project timelines vary depending on scope and complexity. Simple websites typically take 2-4 weeks, while more complex projects may take 6-12 weeks. We'll provide a detailed timeline during our initial consultation.</p>
+                    
+                    <h3>Do you provide ongoing support?</h3>
+                    <p>Yes! We offer various support packages to ensure your website or application continues to perform optimally. This includes updates, security monitoring, and technical assistance.</p>
+                    
+                    <h3>What is your payment structure?</h3>
+                    <p>We typically work with a 50% deposit to begin the project and the remaining 50% upon completion. For larger projects, we can arrange milestone-based payments to better suit your needs.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+        });
+    </script>
+</body>
+</html>
